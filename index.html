@@ -1,19 +1,14 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HTML Launcher</title>
+    <title>Props Inside Launcher</title>
 </head>
 <body>
-
 <script>
-    // Open about:blank
-    const newTab = window.open("about:blank", "_blank");
+const gameHTML = `
 
-    if (newTab) {
-        // HTML you want displayed in the new tab
-        newTab.document.open();
-        newTab.document.write(`
-          <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -5627,17 +5622,22 @@ requestAnimationFrame(loop);
 </script>
 </body>
 </html>
-        `);
-        newTab.document.close();
+`;
 
-        // Close original tab after 10 seconds
-        setTimeout(() => {
-            window.close();
-        }, 500);
-    } else {
-        alert("Please allow pop-ups for this page.");
-    }
+const newTab = window.open("about:blank", "_blank");
+
+if (newTab) {
+    newTab.document.open();
+    newTab.document.write(gameHTML);
+    newTab.document.close();
+
+    setTimeout(() => {
+        window.close();
+    }, 1000);
+
+} else {
+    alert("Please allow pop-ups for this website.");
+}
 </script>
-
 </body>
 </html>
