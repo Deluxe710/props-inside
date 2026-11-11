@@ -1,13 +1,3 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Props Inside Launcher</title>
-</head>
-<body>
-<script>
-const gameHTML = `
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -5619,25 +5609,6 @@ makeItemIcons();makeVehIcons();initSkin();
 buildLobby();
 requestAnimationFrame(loop);
 })();
-</script>
-</body>
-</html>
-`;
-
-const newTab = window.open("about:blank", "_blank");
-
-if (newTab) {
-    newTab.document.open();
-    newTab.document.write(gameHTML);
-    newTab.document.close();
-
-    setTimeout(() => {
-        window.close();
-    }, 1000);
-
-} else {
-    alert("Please allow pop-ups for this website.");
-}
 </script>
 </body>
 </html>
